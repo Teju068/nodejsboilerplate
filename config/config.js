@@ -11,18 +11,18 @@ CONFIG.port = process.env.PORT || '3000';
 CONFIG.db_dialect = process.env.DB_DIALECT || 'mysql';
 CONFIG.db_host = process.env.DB_HOST || 'localhost';
 CONFIG.db_port = process.env.DB_PORT || '3306';
-CONFIG.db_name = process.env.DB_NAME || 'tickle';
+CONFIG.db_name = process.env.DB_NAME || 'db_name';
 CONFIG.db_user = process.env.DB_USER || 'root';
-CONFIG.db_password = process.env.DB_PASSWORD || 'raju@123123';
+CONFIG.db_password = process.env.DB_PASSWORD || 'your-secret-db-password';
 
 /**
  * passport authentication
  */
-CONFIG.jwt_encryption = process.env.JWT_ENCRYPTION || 'As@243cawd23ef_3d2';
+CONFIG.jwt_encryption = process.env.JWT_ENCRYPTION || 'your-secret-encryption-password';
 CONFIG.jwt_expiration = process.env.JWT_EXPIRATION || '10000';
 
 /**
  *  Push Notification
  */
-CONFIG.android_service_key = process.env.ANDROID_PUSH_SERVICE_KEY || '14212421433221';
+CONFIG.android_service_key = process.env.ANDROID_PUSH_SERVICE_KEY || 'FCM-SENDER-ID';
 module.exports = CONFIG;
