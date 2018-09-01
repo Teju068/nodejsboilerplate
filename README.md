@@ -1,18 +1,25 @@
 # Rest Api Node and Mysql
 
 ## Description
-This is an Restful API for Node.js and Mysql. Designed after PHP's beautiful Laravel. This is in the MVC format, except because it is an API there are no views, just models and controllers.
+This is an Restful API for Node.js and Mysql. A well architectured using latest node js verion. 
 
-##### Routing         : Express
-##### ORM Database    : Sequelize
-##### Authentication  : Passport, JWT
+##### Routing             : Express
+##### Database            : MySql - Store Procedure
+##### Authentication      : Passport, JWT
+##### FCM                 : Firebase cloud messaging - Pushnotificaitons and Topics support
+##### Versioning System   : Apis verions support
+##### No more Call Back Hell  : Built using Async/Wait
+##### Documentation       : Api documentation support using swagger
+##### Testing             : Apis testing using Swagger
+##### Error Handling      : Common Error handling
+
 
 ## Installation
 
 #### Download Code | Clone the Repo
 
 ```
-git clone {repo_name}
+git clone https://github.com/Teju068/nodejsboilerplate.git
 ```
 
 #### Install Node Modules
