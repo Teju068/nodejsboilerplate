@@ -42,8 +42,10 @@ module.exports.update = update;
 
 const login = async function (req, res) {
     const body = req.body;
-    let err, user, token;
-    [err, user] = await to(authService.authUser(req.body));
+    let err, user, token,userInfo;
+
+    userInfo = req.body;
+    [err, user] = await to(authService.authUser(userInfo[0]));
     if (err) return ReE(res, err, 422);
     
     [err, token] = await to(securityService.getJWT(body.user_Id));
