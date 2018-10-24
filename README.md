@@ -1,7 +1,7 @@
 # Rest Api Node and Mysql
 
 ## Description
-This is an Restful API for Node.js and Mysql. A well architectured using latest node js verion. 
+This is a Restful API for Node.js and Mysql. A well architectured using latest node js verion. 
 
 ##### Routing             : Express
 ##### Database            : MySql - Store Procedure
