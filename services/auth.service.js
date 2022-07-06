@@ -5,13 +5,12 @@ const securityService = require('../services/security.service');
 
 const getUniqueKeyFromBody = function (body) {// this is so they can send in 3 options unique_key, email, or phone and it will work
     let unique_key = body.user_Id;
+    console.log(body.user_Id)
     if (typeof unique_key === 'undefined') {
         if (typeof body.emailId != 'undefined') {
             unique_key = body.emailId
         } else if (typeof body.phoneNumber != 'undefined') {
             unique_key = body.phoneNumber;
-        } else {
-            unique_key = null;
         }
     }
 
@@ -20,24 +19,18 @@ const getUniqueKeyFromBody = function (body) {// this is so they can send in 3 o
 module.exports.getUniqueKeyFromBody = getUniqueKeyFromBody;
 
 const createUser = async function (userInfo) {
-    let unique_key, err, user;
-
-    unique_key = getUniqueKeyFromBody(userInfo);
-    if (!unique_key) TE('An email or phone number was not entered.');
-
-    if (validator.isEmail(unique_key)) {
-        userInfo.user_Id = unique_key;
-
+    let  err, user;
+    if (validator.isEmail(userInfo.emailId)) {
         [err, user] = await to(User.create(userInfo));
-        if (err) TE('user already exists with that email');
-
+        if (err) {
+            console.log(err)
+            TE('user already exists with that email '+ err.message);
+        }
         return user;
 
-    } else if (validator.isMobilePhone(unique_key, 'any')) {//checks if only phone number was sent
-        userInfo.user_Id = unique_key;
-
+    } else if (validator.isMobilePhone(userInfo.phoneNumber, 'any')) {//checks if only phone number was sent
         [err, user] = await to(User.create(userInfo));
-        if (err) TE('user already exists with that phone number');
+        if (err) TE('user already exists with that phone number: ' + err.message);
 
         return user;
     } else {

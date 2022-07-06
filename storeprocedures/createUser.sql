@@ -5,8 +5,8 @@ IN userName varchar(64),
 IN emailId varchar(64),
 IN password varchar(100),
 IN phoneNumber varchar(100),
-IN createdAt datetime,
-IN updatedAt datetime,
+IN createdAt varchar(25),
+IN updatedAt varchar(25),
 IN confirmPassword varchar(100),
 IN age int
 )
